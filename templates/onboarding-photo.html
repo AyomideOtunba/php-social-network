@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block title %}Profile picture{% endblock %}
+
+{% block content %}
+<main class="container" id="content">
+<section class="header"><h1>Upload picture</h1></section>
+  <form action="{{ doc_root }}onboarding-photo/" method="POST" enctype="multipart/form-data" class="form-membership">
+    {% if errors %}<div class="alert alert-danger">{{ errors }}</div>{% endif %}
+    <div class="form-group">
+      <label for="image">Select profile picture:</label>
+      <input type="file" name="image" id="image" />
+    </div>
+    <input type="submit" name="upload" value="Upload" class="btn btn-primary" />
+  </form>
+</main>
+{% endblock %}

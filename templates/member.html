@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ member.forename }} {{ member.surname }}{% endblock %}
+{% block description %}{{ member.forename|e('html_attr') }} {{ member.surname|e('html_attr') }} on Creative Folk{% endblock %}
+
+{% block content %}
+<main class="container" id="content">
+  <section class="header up">
+    {% if member.picture %}
+      <img src="{{ doc_root }}public/uploads/{{ member.picture }}" alt="{{ member.forename }}"><br>
+    {% else %}
+      <img src="{{ doc_root }}public/uploads/member.png"  alt="" class="profile"><br>
+    {% endif %}
+    <h1>{{ member.forename }} {{ member.surname }}</h1>
+    {% if session.id == member.id %}
+      <nav class="member-options">
+        <a href="{{ doc_root }}work/"><b>ADD WORK</b></a>/
+        <a href="{{ doc_root }}member-edit-profile/"><b>EDIT PROFILE</b></a>/
+        <a href="{{ doc_root }}member-edit-picture/"><b>PROFILE PICTURE</b></a>
+      </nav>
+    {% endif %}
+  </section>
+    <p>Hey, I'm {{ member.forename }}. I'm a {{ department.name }} living in {{ location.name }}. I am a fan of {% for interest in interests %} <a href="{{ doc_root }}interest/" class="btn btn-primary">{{ interest.name }} {{ not loop.last ? '' }}</a>
+ {% endfor %}</p>
+   <p class="center up"><a href="{{ doc_root }}member/{{ session.id }}"><b>@{{ session.forename }}</b></a> / Member since: {{ member.joined|date('F d, Y') }}</p>
+</main>
+{% endblock %}

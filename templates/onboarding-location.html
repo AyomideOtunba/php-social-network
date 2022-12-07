@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% block title %}What's your location?{% endblock %}
+{% block content %}
+<main class="container" id="content">
+  <form method="post" action="{{ doc_root }}onboarding-location/" class="form-membership">
+    <h2>Local governent of residence?</h2>
+    <div class="form-group">
+         <label for="location_id">If school is in session, select & choose a location in Ilorin</label>
+         <select name="location_id" id="location_id" class="form-control">
+           {% for location in locations %}
+             <option value="{{ location.id }}"
+             {% if locationChosen.location_id == location.id %} selected {% endif %}>
+               {{ location.name }}</option>
+            {% endfor %}
+         </select>
+        <span class="errors">{{ errors.locationChosen }}</span> 
+    </div>
+    <div class="form-group form-membership">
+      <label for="email">Email </label>
+      <input type="text" name="email" id="email" value="{{ email }}" class="form-control">
+      <div class="errors">{{ errors.email }}</div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password </label>
+      <input type="password" name="password" id="password" class="form-control">
+      <div class="errors">{{ errors.password|raw }}</div>
+    </div>
+    <input type="submit" class="btn btn-primary form-control" value="Next"><br>
+
+  </form>
+</main>
+{% endblock %}

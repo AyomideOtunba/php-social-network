@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block title %}Department{% endblock %}
+{% block content %}
+<main class="container" id="content">
+  <form method="post" action="{{ doc_root }}onboarding-department/" class="form-membership">
+  <h3>Please select your Department.</h3>
+    <span class="errors">{{ errors.message }}</span> 
+  <div class="form-check">
+    {% for department in departments %}
+    <input type="checkbox" name="department_id[]" value="{{ department.id }}" class="form-check-input" id="department_id">
+    <label for="department_id" class="form-check-label"></label>{{ department.name }} <br>
+      {% endfor %}
+  </div>
+    <input type="submit" class="btn btn-primary" value="Next"/>
+  </form>
+ </main>
+{% endblock %}

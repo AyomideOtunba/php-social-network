@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% block title %}What's your location?{% endblock %}
+{% block content %}
+<main class="container" id="content">
+  <form method="post" action="{{ doc_root }}onboarding-level/" class="form-membership">
+      <span class="errors">{{ errors.message }}</span> 
+    <h2>What level are you in?</h2>
+    <div class="form-check">
+         <input type="radio" name="radio" value="Drop out" class="form-check-input">Drop out<br>
+         <input type="radio" name="radio" value="100 Level" class="form-check-input">100 Level<br>
+         <input type="radio" name="radio" value="200 Level" class="form-check-label">200 Level<br>
+         <input type="radio" name="radio" value="300 Level" class="form-check-label">300 Level<br>
+         <input type="radio" name="radio" value="400 Level" class="form-check-label">400 Level<br>
+         <input type="radio" name="radio" value="500 Level" class="form-check-label">500 Level<br>
+         <input type="radio" name="radio" value="8 year mentee of Toyeeb Godo">8 year mentee of Toyeeb Godo
+    </div>
+    <input type="submit" class="btn btn-primary" value="Next"><br>
+  </form>
+</main>
+{% endblock %}

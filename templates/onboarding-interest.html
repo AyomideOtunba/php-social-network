@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block title %}Interests{% endblock %}
+{% block content %}
+<main class="container" id="content">
+  <form method="post" action="{{ doc_root }}onboarding-interest/" class="form-membership">
+  <h3>Please select your interests. Select 2-5</h3>
+  <span class="errors">{{ errors.message }}</span> 
+  <div class="form-check">
+    {% for interest in interests %}
+    <input type="checkbox" name="interest_id[]" value="{{ interest.id }}" class="form-check-input" id="interest_id">
+    <label for="interest_id" class="form-check-label"></label>{{ interest.name }} <br>
+      {% endfor %}
+  </div>
+    <input type="submit" class="btn btn-primary" value="Next"/>
+  </form>
+ </main>
+{% endblock %}
+
