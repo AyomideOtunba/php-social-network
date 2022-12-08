@@ -11,18 +11,18 @@ define("DOC_ROOT", '/Mentorfied/');
 /// Database settings
 $type     = 'mysql';                 // Type of database
 $server   = 'localhost';             // Server the database is on
-$db       = 'mentorfied';             // Name of the database
+$db       = '';             // Name of the database
 $port     = '';                      // Port is usually 8889 in MAMP and 3306 in XAMPP
 $charset  = 'utf8mb4';               // UTF-8 encoding using 4 bytes of data per character
-$username = '******';              // Enter YOUR username here
-$password = '******';         // Enter YOUR password here
+$username = '';              // Enter YOUR username here
+$password = '';         // Enter YOUR password here
 
 // DO NOT CHANGE NEXT LINE
 $dsn = "$type:host=$server;dbname=$db;port=$port;charset=$charset"; // Create DSN
 
 // SMTP server settings
 $email_config = [
-    'server'      => 'smtp.gmail.com',
+    'server'      => '',
     'port'        => '',
     'username'    => '',
     'password'    => '',
