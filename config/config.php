@@ -23,11 +23,11 @@ $dsn = "$type:host=$server;dbname=$db;port=$port;charset=$charset"; // Create DS
 // SMTP server settings
 $email_config = [
     'server'      => 'smtp.gmail.com',
-    'port'        => '465',
-    'username'    => 'ayomideabuja2022@gmail.com',
-    'password'    => 'fgfupftiypxvshjj',
+    'port'        => '',
+    'username'    => '',
+    'password'    => '',
     'security'    => 'ssl',
-    'admin_email' => 'ayomideabuja2022@gmail.com',
+    'admin_email' => '',
     'debug'       => (DEV) ? 2 : 0,
 ];
 
